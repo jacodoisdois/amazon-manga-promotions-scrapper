@@ -1,0 +1,270 @@
+{
+  "source": {
+    "url":
+      "https://www.amazon.com"
+    ,
+    "searchParam":"s?k=",
+    "headers": {
+      "dnt": "1",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      "sec-fetch-site": "same-origin",
+      "sec-fetch-mode": "navigate",
+      "sec-fetch-user": "?1",
+      "sec-fetch-dest": "document",
+      "referer": "https://www.amazon.com/",
+      "accept-language": "pt-BR,pt;q=0.9,en;q=0.8"
+    }
+  },
+  "selectors": {
+    "name": {
+      "css": "#productTitle",
+      "type": "Text"
+    },
+    "price": {
+      "css": "#price_inside_buybox",
+      "type": "Text"
+    },
+    "short_description": {
+      "css": "#featurebullets_feature_div",
+      "type": "Text"
+    },
+    "images": {
+      "css": ".imgTagWrapper img",
+      "type": "Attribute",
+      "attribute": "data-a-dynamic-image"
+    },
+    "rating": {
+      "css": "span.arp-rating-out-of-text",
+      "type": "Text"
+    },
+    "number_of_reviews": {
+      "css": "a.a-link-normal h2",
+      "type": "Text"
+    },
+    "variants": {
+      "css": "form.a-section li",
+      "multiple": true,
+      "type": "Text",
+      "children": {
+        "name": {
+          "css": "",
+          "type": "Attribute",
+          "attribute": "title"
+        },
+        "asin": {
+          "css": "",
+          "type": "Attribute",
+          "attribute": "data-defaultasin"
+        }
+      }
+    },
+    "product_description": {
+      "css": "#productDescription",
+      "type": "Text"
+    },
+    "sales_rank": {
+      "css": "li#SalesRank",
+      "type": "Text"
+    },
+    "link_to_all_reviews": {
+      "css": "div.card-padding a.a-link-emphasis",
+      "type": "Link"
+    }
+  },
+  "mangas": [
+    {
+      "name": "That time i got reincarnated as a slime",
+      "volumeInfo": {
+        "max": 24,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ],
+        "craveVolumes": []
+      }
+    },
+    {
+      "name": "Record of Ragnarok",
+      "volumeInfo": {
+        "max": 20,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "Mushoku tensei",
+      "volumeInfo": {
+        "max": 25,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "Blue exorcist",
+      "volumeInfo": {
+        "max": 30,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "O labirinto da magia",
+      "volumeInfo": {
+        "max": 37,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "Zero no tsukaima",
+      "volumeInfo": {
+        "max": 7,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "Shakugan no Shana",
+      "volumeInfo": {
+        "max": 10,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "Chainsaw man",
+      "volumeInfo": {
+        "max": 20,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "Demon Slayer",
+      "volumeInfo": {
+        "max": 23,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "Bleach Remix",
+      "volumeInfo": {
+        "max": 26,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "One piece 3 em 1",
+      "volumeInfo": {
+        "max": 40,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    },
+    {
+      "name": "The Seven Deadly Sins",
+      "volumeInfo": {
+        "max": 41,
+        "searchType": "",
+        "volumesToIgnore": [
+          1,
+          2
+        ],
+        "volumesToSearch": [
+          9,
+          8
+        ]
+      },
+      "craveVolumes": []
+    }
+  ]
+}
