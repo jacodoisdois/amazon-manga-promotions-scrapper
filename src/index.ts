@@ -2,7 +2,7 @@
 import * as dotenv from 'dotenv'
 import settings from '../config/settings.json'
 import { type scrapedData, type Manga } from './types/types'
-import { axiosInstance } from './libs/axios'
+import axiosInstance from './libs/axios'
 
 dotenv.config()
 const axios = axiosInstance()
@@ -21,7 +21,7 @@ function getMangaVolumesUrls (manga: Manga): string[] {
   if (volumesToSearch.length > 0) {
     for (const volume of volumesToSearch) {
       let url = `${settings.source.url}/${settings.source.searchParam}`
-      url += manga.name.replace(' ', '+') + `+Vol.${volume}`
+      url += manga.name.replace(/ /g, '+') + `+Vol.${volume}`
 
       urls.push(url)
     }
@@ -30,7 +30,7 @@ function getMangaVolumesUrls (manga: Manga): string[] {
       if (manga.volumeInfo.volumesToIgnore.includes(index)) continue
 
       let url = `${settings.source.searchParam}`
-      url += manga.name.replace(' ', '+') + `+Vol.${index}`
+      url += manga.name.replace(/ /g, '+') + `+Vol.${index}`
 
       urls.push(url)
     }
@@ -61,5 +61,9 @@ async function main (): Promise<void> {
 
   for (const manga of mangasMetadata) {
     const volumeUrls = getMangaVolumesUrls(manga)
+    console.log(volumeUrls)
   }
 }
+
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+(async function () { await main() }())
