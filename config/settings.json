@@ -43,6 +43,11 @@
           "css": ".s-underline-text.s-underline-link-text > span.a-price > span.a-offscreen:first-child",
           "type": "number",
           "slice": 0
+        },
+        "thereIsDiscount": {
+          "css": "",
+          "type": "boolean",
+          "slice": 0
         }
       }
     }

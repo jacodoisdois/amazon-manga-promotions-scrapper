@@ -4,7 +4,7 @@ import axiosInstance from '../libs/axios'
 import * as cheerio from 'cheerio'
 import fs from 'fs'
 import settings from '../../config/settings.json'
-import { getProductCardsRaw } from '../scraping/utils'
+import { getProductMangasRaw } from '../scraping/utils'
 const axios = axiosInstance()
 
 function buscarMangaPorVolume (
@@ -33,16 +33,16 @@ function buscarMangaPorVolume (
 
 test('Should ', async () => {
   const response = await axios.get('/s?k=Record+of+Ragnarok+Vol.9')
-  const cards = getProductCardsRaw(response.data)
-  // const $ = cheerio.load(cards.text())
-  // const spansProductTitles = $(settings.selectors.card.attributes.name.css)
+  const mangas = getProductMangasRaw(response.data)
+  // const $ = cheerio.load(mangas.text())
+  // const spansProductTitles = $(settings.selectors.manga.attributes.name.css)
 
   // let content: string[] = []
   // spansProductTitles.each((index, element) => {
   //   content.push($(element).text())
   // })
 
-  // console.log(cards.text())
-  console.log(cards)
-  // fs.writeFileSync('teste2.txt', cards.text())
+  // console.log(mangas.text())
+  console.log(mangas)
+  // fs.writeFileSync('teste2.txt', mangas.text())
 })

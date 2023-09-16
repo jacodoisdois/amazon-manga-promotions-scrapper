@@ -3,15 +3,15 @@ import * as cheerio from 'cheerio'
 import settings from '../../config/settings.json'
 import { type AnyNode, type Cheerio } from 'cheerio'
 
-type cardAttributes = 'title' | 'language' | 'material' | 'price_discounted' | 'current_price'
+type mangaAttributes = 'title' | 'language' | 'material' | 'price_discounted' | 'current_price' | 'thereIsDiscount'
 
-type CardAttributes = {
-  [key in cardAttributes]: string | number;
+type MangaAttributes = {
+  [key in mangaAttributes]: string | number | boolean;
 }
 
-function getCardAttribute (cardHtml: Cheerio<AnyNode>, attributeName: cardAttributes): CardAttributes[cardAttributes] {
+function getMangaAttribute (mangaHtml: Cheerio<AnyNode>, attributeName: mangaAttributes): MangaAttributes[mangaAttributes] {
   const { css, type, slice } = settings.selectors.card.attributes[attributeName]
-  let attributeContent = cardHtml.find(css).text().trim()
+  let attributeContent = mangaHtml.find(css).text().trim()
 
   if (slice > 0) attributeContent = attributeContent.slice(slice)
 
@@ -26,20 +26,22 @@ function getCardAttribute (cardHtml: Cheerio<AnyNode>, attributeName: cardAttrib
   return attributeContent
 }
 
-export function getProductCardsRaw (html: string): CardAttributes[] {
+export function getProductMangasRaw (html: string): MangaAttributes[] {
   const $ = cheerio.load(html)
-  const cards: CardAttributes[] = []
+  const mangas: MangaAttributes[] = []
 
   $(settings.selectors.card.css).each((index, element) => {
-    const card: CardAttributes = {
-      title: getCardAttribute($(element), 'title'),
-      language: getCardAttribute($(element), 'language'),
-      material: getCardAttribute($(element), 'material'),
-      price_discounted: getCardAttribute($(element), 'price_discounted'),
-      current_price: getCardAttribute($(element), 'current_price')
+    const manga: MangaAttributes = {
+      title: getMangaAttribute($(element), 'title'),
+      language: getMangaAttribute($(element), 'language'),
+      material: getMangaAttribute($(element), 'material'),
+      price_discounted: getMangaAttribute($(element), 'price_discounted'),
+      current_price: getMangaAttribute($(element), 'current_price'),
+      // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+      thereIsDiscount: !!getMangaAttribute($(element), 'price_discounted')
     }
-    cards.push(card)
+    mangas.push(manga)
   })
 
-  return cards
+  return mangas
 }
