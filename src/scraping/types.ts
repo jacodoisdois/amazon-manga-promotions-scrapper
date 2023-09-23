@@ -1,5 +1,7 @@
 export interface Manga {
-  title: string
+  productTitle: string
+  volume?: number
+  name?: string
   language: string
   material: string
   price_discounted: number

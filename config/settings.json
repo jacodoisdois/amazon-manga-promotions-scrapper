@@ -19,7 +19,7 @@
     "card": {
       "css": ".s-card-container",
       "attributes": {
-        "title": {
+        "productTitle": {
           "css": "span.a-size-base-plus.a-color-base.a-text-normal",
           "type": "Text",
           "slice": 0
@@ -54,7 +54,7 @@
   },
   "mangas": [
     {
-      "name": "That time i got reincarnated as a slime",
+      "name": "That Time I Got Reincarnated As A Slime",
       "volumeInfo": {
         "max": 24,
         "searchType": "",
@@ -64,186 +64,11 @@
         ],
         "volumesToSearch": [
           9,
-          8
+          8,
+          18
         ],
         "craveVolumes": []
       }
-    },
-    {
-      "name": "Record of Ragnarok",
-      "volumeInfo": {
-        "max": 20,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "Mushoku tensei",
-      "volumeInfo": {
-        "max": 25,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "Blue exorcist",
-      "volumeInfo": {
-        "max": 30,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "O labirinto da magia",
-      "volumeInfo": {
-        "max": 37,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "Zero no tsukaima",
-      "volumeInfo": {
-        "max": 7,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "Shakugan no Shana",
-      "volumeInfo": {
-        "max": 10,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "Chainsaw man",
-      "volumeInfo": {
-        "max": 20,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "Demon Slayer",
-      "volumeInfo": {
-        "max": 23,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "Bleach Remix",
-      "volumeInfo": {
-        "max": 26,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "One piece 3 em 1",
-      "volumeInfo": {
-        "max": 40,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
-    },
-    {
-      "name": "The Seven Deadly Sins",
-      "volumeInfo": {
-        "max": 41,
-        "searchType": "",
-        "volumesToIgnore": [
-          1,
-          2
-        ],
-        "volumesToSearch": [
-          9,
-          8
-        ]
-      },
-      "craveVolumes": []
     }
   ]
 }
