@@ -1,11 +1,5 @@
-/* eslint-disable prefer-const */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import axiosInstance from '../libs/axios'
-import * as cheerio from 'cheerio'
-import fs from 'fs'
-import settings from '../../config/settings.json'
 import { getProductMangasRaw, getRandomUserAgent, searchMangaByVolume } from '../scraping/utils'
-import { assert } from 'console'
 const axios = axiosInstance()
 
 test('Should return all available volumes for Record of Ragnarok volume 09 ', async () => {

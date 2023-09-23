@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// import fs from 'fs'
 import * as cheerio from 'cheerio'
 import { type AnyNode, type Cheerio } from 'cheerio'
 import settings from '../../config/settings.json'

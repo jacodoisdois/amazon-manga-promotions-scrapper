@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as dotenv from 'dotenv'
 import settings from '../config/settings.json'
 import axiosInstance from './libs/axios'
@@ -20,7 +19,6 @@ async function main (): Promise<void> {
           'User-Agent': getRandomUserAgent()
         }
       })
-      const t4 = performance.now()
       const mangas = getProductMangasRaw(amazonData.data)
       const searchResults = getVolumesWithDiscount(searchMangaByVolume(mangas, volume.name, volume.number))
 
