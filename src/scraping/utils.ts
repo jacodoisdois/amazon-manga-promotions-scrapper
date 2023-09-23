@@ -35,6 +35,7 @@ export function getProductMangasRaw (html: string): Manga[] {
       current_price: getMangaAttribute($(element), 'current_price'),
       thereIsDiscount: !!getMangaAttribute($(element), 'price_discounted')
     }
+
     mangas.push(manga)
   })
 
