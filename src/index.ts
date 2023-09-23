@@ -1,65 +1,34 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import * as dotenv from 'dotenv'
 import settings from '../config/settings.json'
-import { type scrapedData, type Manga } from './types/types'
-import { axiosInstance } from './libs/axios'
+import axiosInstance from './libs/axios'
+import { getMangaVolumes, getProductMangasRaw, getRandomUserAgent, getVolumesWithDiscount, searchMangaByVolume, sleep } from './scraping/utils'
 
 dotenv.config()
 const axios = axiosInstance()
 
-async function getData (): Promise<void> {
-
-}
-
-async function getProductUrls (): Promise<string[]> {
-  return ['']
-}
-
-function getMangaVolumesUrls (manga: Manga): string[] {
-  const urls = []
-  const volumesToSearch = manga.volumeInfo.volumesToSearch
-  if (volumesToSearch.length > 0) {
-    for (const volume of volumesToSearch) {
-      let url = `${settings.source.url}/${settings.source.searchParam}`
-      url += manga.name.replace(' ', '+') + `+Vol.${volume}`
-
-      urls.push(url)
-    }
-  } else {
-    for (let index = 1; index < manga.volumeInfo.max; index++) {
-      if (manga.volumeInfo.volumesToIgnore.includes(index)) continue
-
-      let url = `${settings.source.searchParam}`
-      url += manga.name.replace(' ', '+') + `+Vol.${index}`
-
-      urls.push(url)
-    }
-  }
-
-  return urls
-}
-
-async function hadleVolumes (volumeUrls: string[]): Promise<void> {
-  for (const url of volumeUrls) {
-    const rawData = (await axios.get(url)).data
-  }
-}
-
-function scrapData (html: string): scrapedData {
-  return {
-    name: '',
-    volume: 0,
-    discount: '',
-    referenceDate: '',
-    publisher: '',
-    isCraveVolume: false
-  }
-}
-
 async function main (): Promise<void> {
   const mangasMetadata = settings.mangas
-
+  const mangasWithDiscount = []
   for (const manga of mangasMetadata) {
-    const volumeUrls = getMangaVolumesUrls(manga)
+    const volumes = getMangaVolumes(manga)
+
+    for (const volume of volumes) {
+      await sleep(1000)
+      const amazonData = await axios.get(volume.path, {
+        headers: {
+          'User-Agent': getRandomUserAgent()
+        }
+      })
+      const t4 = performance.now()
+      const mangas = getProductMangasRaw(amazonData.data)
+      const searchResults = getVolumesWithDiscount(searchMangaByVolume(mangas, volume.name, volume.number))
+
+      mangasWithDiscount.push(...searchResults)
+    }
   }
+  console.log(mangasWithDiscount)
 }
+
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
+(async function () { await main() }())

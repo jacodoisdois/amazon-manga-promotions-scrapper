@@ -10,10 +10,10 @@ export interface scrapedData {
 export interface Settings {
   source: Source
   selectors: Selectors
-  mangas: Manga[]
+  mangas: MangaSettings[]
 }
 
-export interface Manga {
+export interface MangaSettings {
   name: string
   volumeInfo: VolumeInfo
   craveVolumes?: any[]
@@ -25,6 +25,12 @@ interface VolumeInfo {
   volumesToIgnore: number[]
   volumesToSearch: number[]
   craveVolumes?: any[]
+}
+
+export interface Volume {
+  number: number
+  name: string
+  path: string
 }
 
 interface Selectors {
