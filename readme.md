@@ -4,7 +4,7 @@
 
 ## Description
 
-The Amazon Manga Promotions Scrapper is a TypeScript application that allows you to search for manga volumes on Amazon and retrieve all mangas under promotional prices. You can specify whether to search for specific volumes, all volumes, or a sequence of volumes. Additionally, you have the option to ignore certain volumes if needed. Happy manga hunting! 🎉
+The Amazon Manga Promotions Scrapper is a TypeScript application that allows you to search for manga volumes on Amazon and retrieve all volumes under promotional prices. You can specify whether to search for specific volumes, all volumes, or a sequence of volumes. Additionally, you have the option to ignore certain volumes if needed. Happy manga hunting! 🎉
 
 ## Table of Contents
 
