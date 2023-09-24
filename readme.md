@@ -31,7 +31,7 @@ The Amazon Manga Promotions Scrapper is a TypeScript application that allows you
             {
               "name": "Manga Title Here",
               "volumeInfo": {
-                "max": Maximum Number of Volumes,
+                "max": 99,
                 "volumesToSearch": [Array of Volumes to Search]
                 ],
                 "volumesToIgnore": [Array of Volumes to Ignore]
@@ -43,7 +43,7 @@ The Amazon Manga Promotions Scrapper is a TypeScript application that allows you
 
       ```
 
-      -  Replace "Manga Title Here" with the name of the manga as it appears on Amazon.
+      - Replace "Manga Title Here" with the name of the manga as it appears on Amazon.
       - Set "Maximum Number of Volumes" to the total number of volumes available for this manga.
       - If you want to search for specific volumes, list them in the "Array of Volumes to Search".
       - If there are volumes you want to skip, include them in the "Array of Volumes to Ignore".
