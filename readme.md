@@ -32,9 +32,9 @@ The Amazon Manga Promotions Scrapper is a TypeScript application that allows you
               "name": "Manga Title Here",
               "volumeInfo": {
                 "max": 99,
-                "volumesToSearch": [Array of Volumes to Search]
+                "volumesToSearch": ["Array of Volumes to Search - integers"]
                 ],
-                "volumesToIgnore": [Array of Volumes to Ignore]
+                "volumesToIgnore": ["Array of Volumes to Ignore - integers"]
                 ]
               }
             }
