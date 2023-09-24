@@ -54,7 +54,7 @@ The Amazon Manga Promotions Scrapper is a TypeScript application that allows you
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/amazon-manga-promotions-scrapper.git
+   git clone https://github.com/jacomaga/amazon-manga-promotions-scrapper.git
    ```
 2. Clone the repository:
     ```sh
