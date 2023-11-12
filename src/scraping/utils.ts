@@ -1,8 +1,7 @@
 import * as cheerio from 'cheerio'
 import { type AnyNode, type Cheerio } from 'cheerio'
 import settings from '../../config/settings.json'
-import { type Manga } from './types'
-import { type Volume, type MangaSettings } from '../types/types'
+import { type Manga, type Volume, type MangaSettings } from '../types/types'
 
 function getMangaAttribute<T extends keyof typeof settings.selectors.card.attributes> (
   mangaHtml: Cheerio<AnyNode>,
@@ -26,7 +25,7 @@ export function getProductMangasRaw (html: string): Manga[] {
   const $ = cheerio.load(html)
   const mangas: Manga[] = []
 
-  $(settings.selectors.card.css).each((index, element) => {
+  $(settings.selectors.card.css).each((index: any, element: any) => {
     const manga: Manga = {
       productTitle: getMangaAttribute($(element), 'productTitle'),
       language: getMangaAttribute($(element), 'language'),
